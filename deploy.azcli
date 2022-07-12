@@ -1,0 +1,12 @@
+# Create
+dotnet new --install Microsoft.Bot.Framework.CSharp.EchoBot
+dotnet new echobot -n IdentitySamplesB2C.Bot
+az deployment group create --resource-group "identitysamplesb2c" --template-file .\DeploymentTemplates\template-with-preexisting-rg.json --parameters @.\DeploymentTemplates\preexisting-rg-parameters.json
+az bot prepare-deploy --lang Csharp --code-dir "." --proj-file-path .\IdentitySamplesB2C.Bot.csproj
+
+# Deploy
+Compress-Archive .\IdentitySamplesB2C.Bot\* .\IdentitySamplesB2C.Bot.zip -Force
+az webapp deployment source config-zip --resource-group "identitysamplesb2c" --name "identitysamplesb2c-bot" --src .\IdentitySamplesB2C.Bot.zip
+
+# Log
+az webapp log tail --resource-group "identitysamplesb2c" --name "identitysamplesb2c-bot"

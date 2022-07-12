@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appId": {
+            "value": "c94e696f-48a3-4aa6-acb0-055bde6f1eec"
+        },
+        "appSecret": {
+            "value": ""
+        },
+        "appType": {
+            "value": "UserAssignedMSI"
+        },
+        "botId": {
+            "value": "identitysamplesb2c-bot"
+        },
+        "botSku": {
+            "value": "F0"
+        },
+        "newAppServicePlanName": {
+            "value": ""
+        },
+        "newAppServicePlanSku": {
+            "value": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            }
+        },
+        "appServicePlanLocation": {
+            "value": "westeurope"
+        },
+        "existingAppServicePlan": {
+            "value": "identitysamplesb2c-app-plan"
+        },
+        "newWebAppName": {
+            "value": "identitysamplesb2c-bot"
+        },
+        "tenantId": {
+            "value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+        },
+        "existingUserAssignedMSIName": {
+            "value": "identitysamplesb2c-bot-identity"
+        },
+        "existingUserAssignedMSIResourceGroupName": {
+            "value": "identitysamplesb2c"
+        }
+    }
+}
